@@ -494,7 +494,6 @@ class GurobiSVM(object):
     def get_indiv_hinge_losses(self, X, Y):
         return indiv_hinge_losses(self.coef_, self.intercept_, X, Y)
 
-
 class QFinder(object):
     def __init__(self, m, q_budget):
         self.cvx_q = cvx.Variable(m)
@@ -510,3 +509,4 @@ class QFinder(object):
         self.prob.solve(verbose=verbose, solver=cvx.GUROBI)
         q = np.array(self.cvx_q.value).reshape(-1)
         return q
+

@@ -340,7 +340,7 @@ class SmoothHinge(GenericNeuralNet):
 
         indiv_adversarial_loss1 = smooth_hinge_loss(self.margin, self.temp)
         indiv_adversarial_loss = indiv_adversarial_loss1+prod
-        adversarial_loss = tf.reduce_mean(indiv_adversarial_loss1) +tf.abs(tf.reduce_mean(prod)) 
+        adversarial_loss = tf.reduce_mean(indiv_adversarial_loss1) + tf.abs(tf.reduce_mean(prod))
         return adversarial_loss, indiv_adversarial_loss 
 
     def adversarial_loss(self, logits, labels,X_train):

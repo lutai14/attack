@@ -28,7 +28,6 @@ from tensorflow.contrib.learn.python.learn.datasets import base
 from .hessians import hessian_vector_product
 from .dataset import DataSet
 
-
 def variable(name, shape, initializer):
     dtype = tf.float32
     var = tf.get_variable(
@@ -95,7 +94,7 @@ class GenericNeuralNet(object):
         self.attack_method = kwargs.pop('method')
         self.general_train_idx=kwargs.pop('general_train_idx')
         self.sensitive_file=kwargs.pop('sensitive_file')
-
+        
         if 'keep_probs' in kwargs: self.keep_probs = kwargs.pop('keep_probs')
         else: self.keep_probs = None
         
@@ -911,5 +910,4 @@ class GenericNeuralNet(object):
         self.data_sets = base.Datasets(train=self.data_sets.train, validation=self.data_sets.validation, test=new_test)
         self.all_test_feed_dict = self.fill_feed_dict_with_all_ex(self.data_sets.test)                
         self.num_test_examples = len(new_test_y)
-        self.reset_datasets()        
-
+        self.reset_datasets()

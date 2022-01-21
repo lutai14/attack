@@ -10,8 +10,6 @@ from .binaryLogisticRegressionWithLBFGS import BinaryLogisticRegressionWithLBFGS
 import experiments
 from .dataset import DataSet
 
-import tensorflow as tf
-
 from tensorflow.contrib.learn.python.learn.datasets import base
 
 

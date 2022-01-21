@@ -188,7 +188,6 @@ if use_train:
 class_map, centroids, centroid_vec, sphere_radii, slab_radii = data.get_data_params(
     X_train, Y_train, percentile=percentile)
 
-
 train2 = DataSet(X_train, Y_train)
 validation2 = None
 test2 = DataSet(X_test, Y_test)
